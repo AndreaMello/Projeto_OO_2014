@@ -11,6 +11,21 @@
     <AssemblyName>Projeto OO</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <PublishUrl>publicar\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -45,6 +60,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Banco_de_Dados_Projeto_OODataSet.cs">
+      <DependentUpon>Banco_de_Dados_Projeto_OODataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Banco_de_Dados_Projeto_OODataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Banco_de_Dados_Projeto_OODataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Banco_de_Dados_Projeto_OOTESTE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Banco_de_Dados_Projeto_OOTESTE.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Cadastro de Software.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +91,18 @@
     </Compile>
     <Compile Include="Cadastro de Pessoa Física.Designer.cs">
       <DependentUpon>Cadastro de Pessoa Física.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastro Endereco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastro Endereco.Designer.cs">
+      <DependentUpon>Cadastro Endereco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastro Pessoa juridica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastro Pessoa juridica.Designer.cs">
+      <DependentUpon>Cadastro Pessoa juridica.cs</DependentUpon>
     </Compile>
     <Compile Include="Consultar Pessoa Física.cs">
       <SubType>Form</SubType>
@@ -170,6 +211,12 @@
     <EmbeddedResource Include="Cadastro de Pessoa Física.resx">
       <DependentUpon>Cadastro de Pessoa Física.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Cadastro Endereco.resx">
+      <DependentUpon>Cadastro Endereco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastro Pessoa juridica.resx">
+      <DependentUpon>Cadastro Pessoa juridica.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consultar Empresa.resx">
       <DependentUpon>Consultar Empresa.cs</DependentUpon>
     </EmbeddedResource>
@@ -227,6 +274,28 @@
     <EmbeddedResource Include="Vender Produto.resx">
       <DependentUpon>Vender Produto.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Banco_de_Dados_Projeto_OODataSet.xsc">
+      <DependentUpon>Banco_de_Dados_Projeto_OODataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Banco_de_Dados_Projeto_OODataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Banco_de_Dados_Projeto_OODataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Banco_de_Dados_Projeto_OODataSet.xss">
+      <DependentUpon>Banco_de_Dados_Projeto_OODataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Banco_de_Dados_Projeto_OOTESTE.xsc">
+      <DependentUpon>Banco_de_Dados_Projeto_OOTESTE.xsd</DependentUpon>
+    </None>
+    <None Include="Banco_de_Dados_Projeto_OOTESTE.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Banco_de_Dados_Projeto_OOTESTE.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Banco_de_Dados_Projeto_OOTESTE.xss">
+      <DependentUpon>Banco_de_Dados_Projeto_OOTESTE.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -239,6 +308,32 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Banco de Dados Projeto OO.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Banco de Dados Projeto OO_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Banco de Dados Projeto OO.mdf</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

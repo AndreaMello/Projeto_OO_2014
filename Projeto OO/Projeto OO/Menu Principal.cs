@@ -25,7 +25,7 @@ namespace Projeto_OO
 
         private void pessoaJurídicaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CadastrarPJ cdcj = new CadastrarPJ();
+            Cadastro_Pessoa_juridica cdcj = new Cadastro_Pessoa_juridica();
             cdcj.Show();
         }
 
